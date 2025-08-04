@@ -1,0 +1,486 @@
+@font-face {
+    font-family: "ExoBlack";
+    src: url("/fonts/Exo2-Black.ttf");
+}
+
+@font-face {
+    font-family: "ExoMedium";
+    src: url("/fonts/Exo2-Medium.ttf");
+}
+
+@font-face {
+    font-family: "ExoRegular";
+    src: url("/fonts/Exo2-Regular.ttf");
+}
+
+
+
+$background-light: #514492;
+$text-light: rgb(0, 0, 0);
+$accent-color: #48e400;
+
+$background-dark: black;
+$text-dark: black;
+
+
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: $background-light;
+    font-family: "ExoRegular";
+    overflow-x: hidden;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.button{
+    width: 10vw;
+    height: 5vh;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: $accent-color;
+    font-family: "ExoBlack", Arial, Helvetica, sans-serif;
+    border: 3px solid $text-light;
+    cursor: pointer;
+    transition: 0.3s;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    &:hover{
+        filter: brightness(2);
+    }
+}
+
+.green{
+    color: $accent-color;
+}
+
+#category-id{
+    display: none;
+}
+
+
+#navbar{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+    
+    &.show-menu{
+        background: rgba($color: $text-light, $alpha: 0.2);
+        backdrop-filter: blur(10px);
+    }
+
+    h1{
+        font-family: ExoBlack;
+        font-size: 40px;
+        color: $text-light;
+        margin: 0px;
+    }
+
+
+    #nav-elements{
+        width: 20vw;
+        height: 5vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        #ul{
+            list-style: none;
+            display: flex;
+
+            li{
+                margin: 15px;
+
+                .link{
+                    font-size: 25px;
+                    text-decoration: none;
+                    color: $text-light;
+                    transition: 0.3s;
+
+                    &:hover{
+                        color: $accent-color;
+                    }
+                }
+            }
+
+            &.show-menu{
+                display: grid;
+            }
+        }
+
+        #nav-buttons{
+            width: 5vw;
+            display: flex;
+            justify-content: space-between;
+
+            #menu-div{
+                display: none;
+            }
+            
+            .image{
+                width: 40px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+#home{
+    width: 100vw;
+    height: 90vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    padding-bottom: 15vh;
+    box-sizing: border-box;
+
+    h1{
+        font-size: 40px;
+        margin: 0px;
+        color: $text-light;
+        font-family: "ExoBlack", Arial, Helvetica, sans-serif;
+    }
+
+    p{
+        font-size: 25px;
+        color: $text-light;
+    }
+
+    #bg {
+        video{
+            width: 100vw;
+            height: 100vh;
+            margin: 0px;
+            padding: 0px;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -3;
+        }
+    }
+
+    #overlay{
+        width: 100vw;
+        height: 100vh;
+        margin: 0px;
+        padding: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background: rgba($color: #000000, $alpha: 0.3);
+        backdrop-filter: blur(5px);
+    }
+}
+
+#form-container{
+    width: 100vw;
+    height: 90vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10vh;
+    box-sizing: border-box;
+
+    form{
+        width: 50vw;
+        height: 70vh;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        background-color: $background-light;
+
+        h1{
+            font-family: "ExoBlack", Arial, Helvetica, sans-serif;
+            font-size: 30px;
+        }
+
+        label{
+            font-size: 20px;
+            margin: 0px;
+            font-family: 'ExoMedium';
+        }
+
+        input, select{
+            margin: 10px 0px;
+            height: 5vh;
+            width: 30vw;
+            border-radius: 10px;
+            padding: 5px 10px;
+            box-sizing: border-box;
+            border: 3px solid $accent-color;
+            font-size: 18px;
+            outline: none;
+            color: $text-light;
+        }
+
+        .button{
+            width: 30vw;
+            margin: 15px 0px;
+        }
+    }
+}
+
+#quiz-page{
+    width: 100vw;
+    height: 90vh;
+    display: grid;
+    justify-content: center;
+    align-content: start;
+    padding: 0px 20vw;
+    margin: 0px;
+    box-sizing: border-box;
+
+    #quiz-card{
+        width: 50vw;
+        height: 35vh;
+        display: grid;
+        align-content: center;
+        padding: 0px 2vw;
+        box-sizing: border-box;
+
+        p{
+            font-size: 25px;
+            margin: 0px;
+        }
+
+        .options-container{
+            display: grid;
+
+            label{
+                font-size: 20px;
+                margin: 5px 0px;
+
+                input[type="radio"]{
+                    width: 30px;
+                    accent-color: $accent-color;
+                }
+            }
+        }
+    }
+
+    .button{
+        margin-bottom: 10vh;
+    }
+}
+
+#results-page{
+    width: 100vw;
+    height: 90vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 10vh;
+    box-sizing: border-box;
+    text-align: center;
+
+    #results{
+        width: 50vh;
+        height: 50vh;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        background-color: rgb(214, 255, 207);
+        border-radius: 30px;
+        box-shadow: 5px 5px 2px $background-light;
+    }
+
+    h1{
+        font-size: 30px;
+        margin: 5px;
+    }
+}
+
+#about-page{
+    width: 100vw;
+    height: 90vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 10vh;
+    box-sizing: border-box;
+
+    #about-container{
+        width: 70vw;
+        height: 60vh;
+        padding: 0px 5vw;
+        display: grid;
+        align-content: center;
+        border: 5px solid $accent-color;
+        box-sizing: border-box;
+        border-radius: 30px;
+
+        h1{
+            font-size: 25px;
+            font-family: "ExoBlack";
+            margin: 0px;
+        }
+
+        p{
+            font-size: 25px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+    .button{
+        width: 20vw;
+        height: 5vh;
+        font-size: 20px;
+        border-radius: 10px;
+        background-color: $accent-color;
+        font-family: "ExoBlack", Arial, Helvetica, sans-serif;
+        border: 3px solid $text-light;
+        cursor: pointer;
+        transition: 0.3s;
+    
+        &:hover{
+            filter: brightness(2);
+        }
+    }
+
+    #navbar{
+        h1{
+            font-size: 30px;
+        }
+    
+        #nav-elements{
+            width: 15vw;
+            height: 5vh;
+            display: flex;
+            justify-content: right;
+    
+            #ul{
+                position: absolute;
+                right: 0;
+                width: 100vw;
+                height: 20vh;
+                justify-content: center;
+                top: 10vh;
+                background: rgba($color: $text-light, $alpha: 0.2);
+                backdrop-filter: blur(10px);
+                display: none;
+                margin: 0px;
+                
+    
+                li{
+                    margin: 15px 15vw;
+    
+                    .link{
+                        font-size: 25px;
+                    }
+                }
+            }
+    
+            #nav-buttons{
+                width: 5vw;
+                display: flex;
+                justify-content: space-between;
+    
+                #menu-div{
+                    display: block;
+                }
+                
+                .image{
+                    width: 40px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    #home{
+        h1{
+            font-size: 30px;
+        }
+    
+        p{
+            font-size: 20px;
+        }
+    }
+
+    #form-container{
+
+        form{
+            width: 80vw;
+            height: 70vh;
+
+            input, select{
+                margin: 5px 0px;
+                width: 80vw;
+            }
+
+            .button{
+                width: 80vw;
+                margin: 20px 0px;
+            }
+        }
+    }
+
+    #quiz-page{
+        padding: 0px;
+
+        #quiz-card{
+            width: 80vw;
+            height: 40vh;
+
+            p{
+                font-size: 20px;
+            }
+
+            .options-container{
+
+                label{
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    #about-page{
+        padding-bottom: 10vh;
+    
+        #about-container{
+            width: 90vw;
+            height: 60vh;
+            padding: 0px 5vw;
+    
+            h1{
+                font-size: 20px;
+            }
+    
+            p{
+                font-size: 20px;
+            }
+        }
+    }
+    
+}
