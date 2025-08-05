@@ -245,8 +245,8 @@ body{
     width: 100vw;
     height: 90vh;
     display: grid;
-    justify-content: center;
-    align-content: start;
+    justify-items: center;
+    align-content: center;
     padding: 0px 20vw;
     margin: 0px;
     box-sizing: border-box;
@@ -281,6 +281,15 @@ body{
 
     .button{
         margin-bottom: 10vh;
+    }
+
+    #quiz-main{
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
     }
 }
 
